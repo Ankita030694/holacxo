@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col">
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col overflow-hidden bg-[#0A163B]">
+      <section className="relative h-screen flex flex-col overflow-hidden bg-[#0A163B]">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -41,11 +41,11 @@ export default function Home() {
         {/* Navigation */}
         <Navbar />
 
-        {/* Hero Content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center mt-36 md:mt-24 mb-20 w-full">
+        {/* Hero Content - Centered */}
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center w-full">
           {/* Inner padded container for hero text */}
           <div className="px-6 flex flex-col items-center text-center">
-            <h1 className="text-[40px] sm:text-[44px] md:text-5xl lg:text-[64px] font-semibold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto px-2 pt-16 md:pt-0">
+            <h1 className="text-[40px] sm:text-[44px] md:text-5xl lg:text-[64px] font-semibold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto px-2">
               Generate $5M+ ARR <br className="block sm:hidden" /> in Enterprise Pipeline
             </h1>
             
@@ -57,29 +57,29 @@ export default function Home() {
               Get a demo
             </button>
           </div>
+        </div>
 
-          {/* Brand Slider (Full Width) */}
-          <div className="mt-16 w-full flex flex-col items-center">
-            <p className="text-blue-100/80 text-[19px] md:text-[20px] mb-8 md:mb-12 px-6 text-center pt-25 md:pt-0">
-              Trusted by leading B2B software firms
-            </p>
-            
-            <div className="w-full overflow-hidden mask-gradient relative flex">
-              <div className="flex whitespace-nowrap animate-marquee items-center min-w-full hover:[animation-play-state:paused]">
-                {/* Duplicate the array multi-times for a smoother long loop */}
-                {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
-                  <div key={index} className="flex-none px-12 md:px-20 flex items-center h-16 relative">
-                    <div className="relative h-12 w-48">
-                      <Image
-                        src={`/brandslider/${logo}`}
-                        alt="Brand Logo"
-                        fill
-                        className="object-contain brightness-0 invert opacity-80"
-                      />
-                    </div>
+        {/* Brand Slider (At the Bottom) */}
+        <div className="relative z-10 w-full flex flex-col items-center pb-12 md:pb-20 mt-auto">
+          <p className="text-blue-100/80 text-[18px] md:text-[20px] mb-8 md:mb-10 px-6 text-center">
+            Trusted by leading B2B software firms
+          </p>
+          
+          <div className="w-full overflow-hidden mask-gradient relative flex">
+            <div className="flex whitespace-nowrap animate-marquee items-center min-w-full hover:[animation-play-state:paused]">
+              {/* Duplicate the array multi-times for a smoother long loop */}
+              {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
+                <div key={index} className="flex-none px-12 md:px-20 flex items-center h-20 relative">
+                  <div className={`relative ${logo.includes('salesforce') ? 'h-16 w-56 md:h-20 md:w-64' : 'h-10 w-40 md:h-12 md:w-48'}`}>
+                    <Image
+                      src={`/brandslider/${logo}`}
+                      alt="Brand Logo"
+                      fill
+                      className="object-contain brightness-0 invert opacity-80"
+                    />
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

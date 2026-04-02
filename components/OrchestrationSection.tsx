@@ -21,7 +21,7 @@ export default function OrchestrationSection() {
   ];
 
   return (
-    <section className="w-full bg-[#F0EDE6] py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden flex flex-col items-center z-0">
+    <section className="w-full bg-[#F0EDE6] py-24 md:py-10 px-4 sm:px-6 relative overflow-hidden flex flex-col items-center z-0">
       
       {/* Headings */}
       <div className="text-center mb-16 relative z-10">
@@ -37,7 +37,7 @@ export default function OrchestrationSection() {
       <div className="relative w-full max-w-4xl mx-auto flex flex-col items-center mt-10">
         
         {/* Glow effect matching color #A2BAFF behind the logo/trunk */}
-        <div className="absolute top-[-40px] left-1/2 -translate-x-1/2 w-[700px] h-[550px] bg-[#A2BAFF] rounded-full blur-[110px] opacity-[0.85] pointer-events-none z-0"></div>
+        <div className="absolute top-[-40px] left-1/2 -translate-x-1/2 w-[700px] h-[250px] bg-[#A2BAFF] rounded-full blur-[110px] opacity-[0.85] pointer-events-none z-0"></div>
 
         {/* Top Node (LOGO) */}
         <div className="flex items-center justify-center w-[150px] md:w-[220px] h-[55px] md:h-[75px] mb-[-1px] relative z-20">

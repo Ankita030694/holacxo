@@ -9,11 +9,11 @@ export default function Navbar() {
 
   return (
     <div className="w-full relative z-50 px-4 pt-5 lg:px-0 lg:pt-0">
-      <div className={`w-full max-w-7xl mx-auto flex flex-col ${isOpen ? 'bg-[#0a1128]' : 'bg-[#0a1128] lg:bg-transparent'}`}>
-        <nav className="w-full px-5 py-4 lg:px-6 lg:py-8 flex items-center justify-between">
+      <div className={`w-full max-w-8xl mx-auto flex flex-col ${isOpen ? 'bg-[#0a1128]' : 'bg-[#0a1128] lg:bg-transparent'}`}>
+        <nav className="w-full px-5 py-4 lg:px-36 lg:py-8 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" onClick={() => setIsOpen(false)}>
-              <div className="relative w-[120px] h-[34px] md:w-32 md:h-11 transition-opacity hover:opacity-90">
+              <div className="relative w-[120px] h-[34px] md:w-42 md:h-11 transition-opacity hover:opacity-90">
                 <Image
                   src="/hero/Group 36.svg"
                   alt="HolaCXO Logo"
@@ -26,7 +26,7 @@ export default function Navbar() {
             
             <div className="h-6 w-px bg-white/30 hidden lg:block"></div>
             
-            <div className="hidden lg:flex items-center gap-8 text-[15px] font-medium text-blue-100/80">
+            <div className="hidden lg:flex items-center gap-8 text-[18px] font-medium text-blue-100/80">
               <Link href="/" className="hover:text-white transition-colors">Solution</Link>
               <Link href="/blog" className="hover:text-white transition-colors">Resources</Link>
               <Link href="#" className="hover:text-white transition-colors">Pricing</Link>
@@ -36,7 +36,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link 
               href="/contact" 
-              className="hidden lg:block px-6 py-2.5 rounded border border-white/20 text-[15px] font-medium text-white hover:bg-white/10 transition-colors"
+              className="hidden lg:block px-6 py-2.5 rounded border border-white/20 text-[18px] font-medium text-white hover:bg-white/10 transition-colors"
             >
               Contact Us
             </Link>

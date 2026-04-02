@@ -33,14 +33,14 @@ export default function TimelineSection() {
   ];
 
   return (
-    <section className="w-full bg-[#F0EDE6] py-24 md:py-32 px-4 sm:px-6 relative overflow-hidden">
+    <section className="w-full bg-[#F0EDE6] py-24 md:pt-32 px-4 sm:px-6 relative overflow-hidden">
       
       {/* Headings */}
       <div className="text-center mb-24 md:mb-32">
-        <h3 className="text-[#5B5D71] text-[15px] font-medium tracking-[0.05em] uppercase mb-4">
+        <h3 className="text-[#5B5D71] text-[18px] font-medium tracking-[0.05em] uppercase mb-4">
           HOW SOON CAN YOU SEE RESULTS
         </h3>
-        <h2 className="text-3xl md:text-[42px] text-[#1A3FA8] font-medium leading-[1.2] max-w-2xl mx-auto">
+        <h2 className="text-3xl md:text-[44px] text-[#1A3FA8] font-bold leading-[1.2] max-w-2xl mx-auto">
           From onboarding to closed deal in 90 days.
         </h2>
       </div>

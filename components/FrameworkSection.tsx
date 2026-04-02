@@ -60,27 +60,27 @@ export default function FrameworkSection() {
   const displayIndex = activeIndex !== null ? activeIndex : 0;
 
   return (
-    <section className="w-full bg-[#F0EDE6] pb-24 px-6 flex flex-col items-center">
+    <section className="w-full bg-[#F0EDE6] py-10 px-6 flex flex-col items-center">
       {/* Headings */}
-      <h3 className="text-[#5b5b72] text-[14px] md:text-[15px] font-semibold tracking-wider uppercase mb-4">
+      <h3 className="text-[#5b5b72] text-[14px] md:text-[18px] font-semibold tracking-wider uppercase mb-4">
         Hola CXO's Framework That Closes
       </h3>
-      <h2 className="text-3xl md:text-[42px] text-[#1A3FA8] font-medium text-center mb-16">
+      <h2 className="text-3xl md:text-[44px] text-[#1A3FA8] font-bold text-center mb-2">
         Enterprise Deals in 90 Days
       </h2>
 
       {/* Main Grid container */}
-      <div className="w-full max-w-[1240px] grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+      <div className="w-full max-w-[1240px] grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch" style={{scale: 0.9}}>
         
         {/* Left Column - Buttons & Mobile Accordion */}
-        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-8 h-full">
+        <div className="lg:col-span-5 flex flex-col gap-4 md:gap-22 h-full">
           {frameworkData.map((item, index) => {
             const isActive = index === activeIndex;
             return (
               <div key={item.id} className="flex flex-col gap-2">
                 <button
                   onClick={() => setActiveIndex(isActive ? null : index)}
-                  className={`flex items-center justify-between gap-5 py-3 px-6 md:px-8 text-left transition-all duration-300 border-none outline-none min-h-[80px]
+                  className={`flex items-center justify-between gap-5 py-3 px-6 md:px-6 text-left transition-all duration-300 border-none outline-none min-h-[120px]
                     ${isActive 
                       ? "bg-[#161662] text-white shadow-xl" 
                       : "bg-[#E5E2DC] text-[#161662] hover:bg-[#DCD8D0]"
@@ -92,7 +92,7 @@ export default function FrameworkSection() {
                     <div className={isActive ? "text-white" : `text-[#161662] ${activeIndex === null && index === 0 ? "lg:text-white" : ""}`}>
                       {item.icon}
                     </div>
-                    <span className="text-[18px] md:text-[22px] font-medium leading-[1.2] max-w-[280px]">
+                    <span className="text-[18px] md:text-[26px] font-light leading-[1.2] max-w-[580px]">
                       {item.title}
                     </span>
                   </div>
@@ -132,7 +132,7 @@ export default function FrameworkSection() {
         </div>
 
         {/* Right Column - Dynamic Content (Desktop Only) */}
-        <div className="hidden lg:flex lg:col-span-7 bg-[#161662] w-full h-full p-10 flex-col items-start justify-start shadow-xl">
+        <div className="hidden lg:flex lg:col-span-7 bg-[#161662] w-full h-full p-6 flex-col items-start justify-start shadow-xl">
           <p className="text-white text-lg font-medium text-left leading-relaxed mb-6 max-w-2xl flex-shrink-0">
             {frameworkData[displayIndex].description}
           </p>

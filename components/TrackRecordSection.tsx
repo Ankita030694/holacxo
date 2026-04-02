@@ -15,8 +15,8 @@ export default function TrackRecordSection() {
   ];
 
   return (
-    <section className="w-full bg-[#F0EDE6] py-16 md:py-20 px-2 sm:px-6 flex flex-col items-center">
-      <h2 className="text-[26px] md:text-[36px] text-[#1A3FA8] font-medium text-center mb-6 md:mb-16">
+    <section className="w-full bg-[#F0EDE6] py-16 md:py-10 px-2 sm:px-6 flex flex-col items-center">
+      <h2 className="text-[26px] md:text-[44px] text-[#1A3FA8] font-bold text-center mb-6 md:mb-10">
         Track Record
       </h2>
 
@@ -28,10 +28,10 @@ export default function TrackRecordSection() {
               index !== stats.length - 1 ? "md:border-r border-[#1A3FA8]/20" : ""
             }`}
           >
-            <span className="text-[19px] sm:text-[22px] md:text-3xl font-bold text-[#161662] mb-1.5 md:mb-3 whitespace-nowrap tracking-tight md:tracking-normal">
+            <span className="text-[19px] sm:text-[26px] md:text-[36px] font-bold text-[#161662] mb-1.5 md:mb-3 whitespace-nowrap tracking-tight md:tracking-normal">
               {stat.value}
             </span>
-            <span className="text-[13px] sm:text-[14px] md:text-lg text-[#161662]/70 font-medium whitespace-normal md:whitespace-nowrap leading-[1.2] md:leading-normal">
+            <span className="text-[13px] sm:text-[14px] md:text-[18px] text-[#161662]/70 font-medium whitespace-normal md:whitespace-nowrap leading-[1.2] md:leading-normal">
               {stat.label}
             </span>
           </div>

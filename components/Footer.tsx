@@ -10,14 +10,6 @@ export default function Footer() {
     {
       title: "Legal",
       links: ["Privacy policy", "Terms & conditions"]
-    },
-    {
-      title: "Pages",
-      links: ["Home", "Solution", "Resources", "Pricing", "Contact"]
-    },
-    {
-      title: "Pages",
-      links: ["Home", "Solution", "Resources", "Pricing", "Contact"]
     }
   ];
 
@@ -58,7 +50,7 @@ export default function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="w-full lg:w-2/3 grid grid-cols-2 sm:grid-cols-4 gap-8 md:gap-4 lg:pl-16">
+          <div className="w-full lg:w-2/3 flex justify-start lg:justify-end gap-16 md:gap-42">
             {footerLinks.map((column, idx) => (
               <div key={idx} className="flex flex-col">
                 <h4 className="text-white text-[20px] font-semibold mb-6">

@@ -36,7 +36,7 @@ export default function ComparisonSection() {
 
   return (
     <section className="w-full bg-[#F0EDE6] py-16 px-4 sm:px-6 md:px-12 flex justify-center">
-      <div className="relative w-full max-w-6xl rounded-lg overflow-hidden flex flex-col items-center pt-12 pb-16 px-6 md:px-12 shadow-2xl">
+      <div className="relative w-full max-w-6xl rounded-lg overflow-hidden flex flex-col items-center py-14 px-14 px-6 md:px-12 shadow-2xl">
         
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0 bg-[#0A0706]">
@@ -54,12 +54,12 @@ export default function ComparisonSection() {
         {/* Foreground Content */}
         <div className="relative z-10 w-full flex flex-col items-center">
           
-          <h3 className="text-white/70 tracking-widest text-sm font-semibold uppercase mb-4 text-center">
+          <h3 className="text-white/70 tracking-widest text-[18px] font-semibold uppercase mb-4 text-center">
             HOLA CXO — WHY WE'RE DIFFERENT
           </h3>
           
-          <h2 className="text-white text-3xl md:text-5xl lg:text-[48px] font-medium text-center max-w-3xl leading-tight mb-12 font-serif">
-            Enterprise demand generation built around how deals actually close.
+          <h2 className="text-white text-3xl md:text-[44px] lg:text-[48px] font-bold text-center max-w-4xl leading-tight mb-12">
+            Enterprise Demand Generation Built Around How Deals Actually Close.
           </h2>
 
           {/* Comparison Table / Grid */}

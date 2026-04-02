@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
-html {
-  /* Scales the entire page down to 80% uniformly to counter the 100% actual zoom feeling too big */
-  zoom: 0.8;
-}
+
 
 :root {
   --background: #0B1528;

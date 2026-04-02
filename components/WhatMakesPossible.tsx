@@ -26,7 +26,7 @@ export default function WhatMakesPossible() {
 
   return (
     <section className="w-full bg-[#F0EDE6] py-24 px-6 flex flex-col items-center">
-      <h2 className="text-[#1A3FA8] text-[32px] md:text-[36px] font-bold tracking-tight md:uppercase mb-14 md:mb-20 text-center leading-[1.1] md:leading-normal">
+      <h2 className="text-[#1A3FA8] text-[32px] md:text-[44px] font-bold tracking-tight mb-14 md:mb-20 text-center leading-[1.1] md:leading-normal">
         What makes this <br className="block md:hidden" /> possible
       </h2>
 
