@@ -26,14 +26,14 @@ export default function WhatMakesPossible() {
 
   return (
     <section className="w-full bg-[#F0EDE6] py-24 px-6 flex flex-col items-center">
-      <h2 className="text-[#1A3FA8] text-[28px] md:text-[36px] font-bold tracking-tight uppercase mb-20 text-center">
-        WHAT MAKES THIS POSSIBLE
+      <h2 className="text-[#1A3FA8] text-[32px] md:text-[36px] font-bold tracking-tight md:uppercase mb-14 md:mb-20 text-center leading-[1.1] md:leading-normal">
+        What makes this <br className="block md:hidden" /> possible
       </h2>
 
-      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-16">
+      <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 md:gap-y-16">
         {features.map((feature, index) => (
-          <div key={index} className="flex flex-col items-center text-center max-w-md mx-auto">
-            <div className="w-16 h-16 relative mb-8 flex items-center justify-center">
+          <div key={index} className="flex flex-col items-start md:items-center text-left md:text-center max-w-md md:mx-auto">
+            <div className="w-[50px] h-[50px] md:w-16 md:h-16 relative mb-4 md:mb-8 flex items-center justify-center">
               <Image
                 src={feature.icon}
                 alt={feature.title}
@@ -41,10 +41,10 @@ export default function WhatMakesPossible() {
                 className="object-contain"
               />
             </div>
-            <h3 className="text-[#161662] text-2xl md:text-[26px] font-semibold mb-4 leading-tight">
+            <h3 className="text-[#161662] text-[20px] md:text-[26px] font-medium md:font-semibold mb-1.5 md:mb-4 leading-tight">
               {feature.title}
             </h3>
-            <p className="text-[#161662]/70 text-lg md:text-[19px] leading-relaxed">
+            <p className="text-[#161662]/80 md:text-[#161662]/70 text-[15px] md:text-[19px] leading-relaxed pr-4 md:pr-0">
               {feature.description}
             </p>
           </div>

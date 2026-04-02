@@ -90,8 +90,14 @@ export default function ComparisonSection() {
               <div className="absolute inset-0 bg-white/5 z-0 pointer-events-none"></div>
               
               <div className="relative z-10 p-6 text-center text-white font-bold text-lg tracking-wide border-b border-white/10 mx-6 pt-6 flex items-center justify-center min-h-[80px]">
-                {/* Logo Placeholder */}
-                LOGO
+                <div className="relative w-32 h-10">
+                  <Image
+                    src="/hero/Group 36.svg"
+                    alt="HolaCXO Logo"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
               </div>
               <div className="relative z-10 flex flex-col gap-6 px-8 xl:px-12 py-8">
                 {comparisonData.map((item, idx) => (

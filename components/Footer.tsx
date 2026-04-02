@@ -26,7 +26,7 @@ export default function Footer() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 bg-[#0A163B]">
         <Image
-          src="/hero/Home.jpg.jpeg"
+          src="/hero/HERO IMAGE.png"
           alt="Footer Background"
           fill
           className="object-cover"

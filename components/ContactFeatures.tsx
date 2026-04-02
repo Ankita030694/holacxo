@@ -5,65 +5,65 @@ export default function ContactFeatures() {
   const features = [
     // ROW 1
     {
-      icon: "/contact/features/firstcolumn.svg",
+      icon: "/contact/features/1.svg",
       title: "5-year deal behaviour dataset",
       description: "We recognise patterns — not guesses — to know when an account is actually in-market."
     },
     {
-      icon: "/contact/features/second.svg",
+      icon: "/contact/features/2.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     {
-      icon: "/contact/features/third.svg",
+      icon: "/contact/features/3.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     // ROW 2
     {
-      icon: "/contact/features/firstcolumn.svg",
+      icon: "/contact/features/4.svg",
       title: "5-year deal behaviour dataset",
       description: "We recognise patterns — not guesses — to know when an account is actually in-market."
     },
     {
-      icon: "/contact/features/second.svg",
+      icon: "/contact/features/5.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     {
-      icon: "/contact/features/third.svg",
+      icon: "/contact/features/6.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     // ROW 3
     {
-      icon: "/contact/features/firstcolumn.svg",
+      icon: "/contact/features/7.svg",
       title: "5-year deal behaviour dataset",
       description: "We recognise patterns — not guesses — to know when an account is actually in-market."
     },
     {
-      icon: "/contact/features/second.svg",
+      icon: "/contact/features/8.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     {
-      icon: "/contact/features/third.svg",
+      icon: "/contact/features/9.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     // ROW 4
     {
-      icon: "/contact/features/firstcolumn.svg",
+      icon: "/contact/features/10.svg",
       title: "5-year deal behaviour dataset",
       description: "We recognise patterns — not guesses — to know when an account is actually in-market."
     },
     {
-      icon: "/contact/features/second.svg",
+      icon: "/contact/features/11.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     {
-      icon: "/contact/features/third.svg",
+      icon: "/contact/features/12.svg",
       title: "Signal-led account selection",
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
@@ -85,22 +85,23 @@ export default function ContactFeatures() {
       </div>
 
       {/* 4x3 Feature Grid */}
-      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-20">
+      <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 md:gap-y-20">
         {features.map((feature, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
-            {/* Icon Wrapper (The SVGs already have their own background squares) */}
-            <div className="w-16 h-16 relative mb-8 flex items-center justify-center rounded-sm overflow-hidden">
+          <div key={index} className="flex flex-col items-start md:items-center text-left md:text-center">
+            {/* Icon Wrapper added background color to support new SVGs */}
+            <div className="w-[50px] h-[50px] md:w-16 md:h-16 relative mb-4 md:mb-8 flex items-center justify-center bg-[#161662] shadow-sm">
               <Image
                 src={feature.icon}
                 alt={feature.title}
-                fill
+                width={32}
+                height={32}
                 className="object-contain"
               />
             </div>
-            <h3 className="text-[#161662] text-[22px] font-semibold mb-4 leading-tight">
+            <h3 className="text-[#161662] text-[20px] md:text-[22px] font-medium md:font-semibold mb-1.5 md:mb-4 leading-tight">
               {feature.title}
             </h3>
-            <p className="text-[#161662]/70 text-[17px] leading-relaxed">
+            <p className="text-[#161662]/80 md:text-[#161662]/70 text-[15px] md:text-[17px] leading-relaxed pr-4 md:pr-0">
               {feature.description}
             </p>
           </div>

@@ -67,7 +67,7 @@ export default function ContactPage() {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/hero/Home.jpg.jpeg"
+            src="/hero/HERO IMAGE.png"
             alt="Contact Hero Background"
             fill
             className="object-cover"
