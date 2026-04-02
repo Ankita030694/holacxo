@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <main className="w-full flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#0A163B]">
+      <section className="min-h-screen flex flex-col overflow-hidden bg-[#0A163B]">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
