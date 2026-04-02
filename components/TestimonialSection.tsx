@@ -61,6 +61,9 @@ export default function TestimonialSection() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const [dragOffset, setDragOffset] = useState(0);
+  const containerRef = React.useRef<HTMLDivElement>(null);
+
   const handleNext = useCallback(() => {
     if (!isTransitioning) return;
     setCurrentIndex((prev) => prev + 1);
@@ -77,7 +80,7 @@ export default function TestimonialSection() {
       const timer = setTimeout(() => {
         setIsTransitioning(false);
         setCurrentIndex(testimonials.length);
-      }, 500); // Wait for animation duration
+      }, 500); 
       return () => clearTimeout(timer);
     }
     if (currentIndex <= testimonials.length - 1) {
@@ -92,12 +95,12 @@ export default function TestimonialSection() {
 
   useEffect(() => {
     if (isPaused) return;
-    const interval = setInterval(handleNext, 2000);
+    const interval = setInterval(handleNext, 3000); // Slower interval for better UX
     return () => clearInterval(interval);
   }, [handleNext, isPaused]);
 
   const TestimonialCard = ({ testimonial }: { testimonial: typeof testimonials[0] }) => (
-    <div className="bg-white flex flex-col items-start text-left shadow-xl p-8 lg:p-10 h-full border border-[#0000000a]">
+    <div className="bg-white flex flex-col items-start text-left shadow-xl p-8 lg:p-10 h-full border border-[#0000000a] select-none">
       {/* Stars */}
       <div className="flex gap-[3px] mb-8">
         {[1, 2, 3, 4, 5].map((star) => (
@@ -169,11 +172,29 @@ export default function TestimonialSection() {
         </div>
 
         {/* Carousel Container */}
-        <div className="overflow-hidden">
+        <div 
+          ref={containerRef}
+          className="overflow-hidden cursor-grab active:cursor-grabbing select-none" 
+          style={{ touchAction: 'pan-y' }}
+        >
           <motion.div 
             className="flex"
+            onPan={(e, info) => {
+              setIsPaused(true);
+              setDragOffset(info.offset.x);
+            }}
+            onPanEnd={(e, info) => {
+              setIsPaused(false);
+              const threshold = 50;
+              if (info.offset.x < -threshold) {
+                handleNext();
+              } else if (info.offset.x > threshold) {
+                handlePrev();
+              }
+              setDragOffset(0);
+            }}
             animate={{
-              x: `-${(currentIndex / displayItems.length) * 100}%`
+              x: `calc(-${(currentIndex / displayItems.length) * 100}% + ${dragOffset}px)`
             }}
             transition={isTransitioning ? {
               type: "spring",

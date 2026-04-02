@@ -5,11 +5,20 @@ export default function Footer() {
   const footerLinks = [
     {
       title: "Pages",
-      links: ["Home", "Solution", "Resources", "Pricing", "Contact"]
+      links: [
+        { name: "Home", href: "/" },
+        { name: "Solution", href: "/contact" },
+        { name: "Resources", href: "/blog" },
+        { name: "Pricing", href: "/contact" },
+        { name: "Contact", href: "/contact" }
+      ]
     },
     {
       title: "Legal",
-      links: ["Privacy policy", "Terms & conditions"]
+      links: [
+        { name: "Privacy policy", href: "/contact" },
+        { name: "Terms & conditions", href: "/contact" }
+      ]
     }
   ];
 
@@ -44,7 +53,7 @@ export default function Footer() {
           {/* Logo & Description */}
           <div className="w-full lg:w-1/3 mb-12 lg:mb-0">
             {/* Logo Image */}
-            <div className="relative w-[180px] h-[75px] mb-6 mb-6">
+            <div className="relative w-[180px] h-[75px] mb-6">
               <Image
                 src="/hero/Group 36.svg"
                 alt="HolaCXO Logo"
@@ -68,10 +77,10 @@ export default function Footer() {
                   {column.links.map((link, linkIdx) => (
                     <Link 
                       key={linkIdx} 
-                      href="#" 
+                      href={link.href} 
                       className="text-white/80 hover:text-white transition-colors text-[16px] w-fit"
                     >
-                      {link}
+                      {link.name}
                     </Link>
                   ))}
                 </div>
