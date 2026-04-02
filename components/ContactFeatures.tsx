@@ -1,7 +1,11 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Image from 'next/image';
 
 export default function ContactFeatures() {
+  const [showAllFeatures, setShowAllFeatures] = useState(false);
+
   const features = [
     // ROW 1
     {
@@ -87,7 +91,10 @@ export default function ContactFeatures() {
       {/* 4x3 Feature Grid */}
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-10 md:gap-y-20">
         {features.map((feature, index) => (
-          <div key={index} className="flex flex-col items-start md:items-center text-left md:text-center">
+          <div 
+            key={index} 
+            className={`flex-col items-start md:items-center text-left md:text-center ${!showAllFeatures && index >= 4 ? 'hidden md:flex' : 'flex'}`}
+          >
             {/* Icon Wrapper added background color to support new SVGs */}
             <div className="w-[50px] h-[50px] md:w-16 md:h-16 relative mb-4 md:mb-8 flex items-center justify-center bg-[#161662] shadow-sm">
               <Image
@@ -107,6 +114,18 @@ export default function ContactFeatures() {
           </div>
         ))}
       </div>
+
+      {/* Mobile "View More" Button */}
+      {!showAllFeatures && (
+        <div className="w-full flex justify-center mt-10 md:hidden">
+          <button 
+            onClick={() => setShowAllFeatures(true)}
+            className="px-10 py-3 bg-blue-500 text-white text-[15px] font-medium hover:bg-blue-600 transition-colors shadow-sm"
+          >
+            View More
+          </button>
+        </div>
+      )}
     </section>
   );
 }
