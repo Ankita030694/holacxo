@@ -9,52 +9,37 @@ const frameworkData = [
     title: "Capturing demand that already exists",
     description: "We use organizational buying signals to identify the accounts most likely to feel the strongest need for your product right now.",
     imagePath: "/framework/1.jpg", 
-    icon: (
-      <svg className="w-14 h-14 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-        <circle cx="12" cy="13" r="8"/>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4l2 2" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M5 3L2 6" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M22 6l-3-3" />
-      </svg>
-    ),
+    iconWhite: "/enterprice-deals/1.svg",
+    iconBlue: "/enterprice-deals/Group 41.svg",
   },
   {
     id: 1,
     title: "Identifying buying urgency windows",
     description: "We identify the moments when internal urgency is most likely to rise and enterprise buying is more likely to accelerate.",
     imagePath: "/framework/2.jpg", 
-    icon: (
-      <svg className="w-14 h-14 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6v8a8 8 0 1016 0V6M4 6h4v4H4zM16 6h4v4h-4z" />
-      </svg>
-    ),
+    iconWhite: "/enterprice-deals/2.svg",
+    iconBlue: "/enterprice-deals/Group 42.svg",
   },
   {
     id: 2,
     title: "Connecting With Buyer Context",
     description: "We craft messaging around what is happening inside the account right now. That makes conversations more relevant, credible, and commercially aligned.",
     imagePath: "/framework/3.jpg", 
-    icon: (
-      <svg className="w-14 h-14 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-      </svg>
-    ),
+    iconWhite: "/enterprice-deals/3.svg",
+    iconBlue: "/enterprice-deals/Vector.svg",
   },
   {
     id: 3,
     title: "Building Internal Buy-In Early",
     description: "Enterprise deals move faster when your company feels more trusted, more familiar, and easier to support internally. We help build that confidence early, before formal evaluation slows the deal down.",
     imagePath: "/framework/4.jpg", 
-    icon: (
-      <svg className="w-14 h-14 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
-      </svg>
-    ),
+    iconWhite: "/enterprice-deals/4.svg",
+    iconBlue: "/enterprice-deals/Group 43.svg",
   }
 ];
 
 export default function FrameworkSection() {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(0);
   
   // For desktop display when no option is clicked, default to the first item visually
   const displayIndex = activeIndex !== null ? activeIndex : 0;
@@ -90,7 +75,20 @@ export default function FrameworkSection() {
                 >
                   <div className="flex items-center gap-5">
                     <div className={isActive ? "text-white" : `text-[#161662] ${activeIndex === null && index === 0 ? "lg:text-white" : ""}`}>
-                      {item.icon}
+                      {isActive && (
+                        <Image src={item.iconWhite} alt={item.title} width={56} height={56} className="w-14 h-14 flex-shrink-0" />
+                      )}
+                      
+                      {!isActive && activeIndex === null && index === 0 && (
+                        <>
+                          <Image src={item.iconBlue} alt={item.title} width={56} height={56} className="w-14 h-14 flex-shrink-0 lg:hidden" />
+                          <Image src={item.iconWhite} alt={item.title} width={56} height={56} className="w-14 h-14 flex-shrink-0 hidden lg:block" />
+                        </>
+                      )}
+
+                      {!isActive && !(activeIndex === null && index === 0) && (
+                         <Image src={item.iconBlue} alt={item.title} width={56} height={56} className="w-14 h-14 flex-shrink-0" />
+                      )}
                     </div>
                     <span className="text-[18px] md:text-[26px] font-light leading-[1.2] max-w-[580px]">
                       {item.title}
@@ -118,8 +116,8 @@ export default function FrameworkSection() {
                       <Image 
                         src={item.imagePath} 
                         alt={item.title} 
-                        width={0}
-                        height={0}
+                        width={1200}
+                        height={800}
                         sizes="100vw"
                         className="w-full h-auto block object-cover" 
                       />
@@ -141,8 +139,8 @@ export default function FrameworkSection() {
             <Image 
               src={frameworkData[displayIndex].imagePath} 
               alt={frameworkData[displayIndex].title} 
-              width={0}
-              height={0}
+              width={1200}
+              height={800}
               sizes="100vw"
               className="w-full h-auto block object-cover" 
             />

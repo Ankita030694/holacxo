@@ -28,7 +28,7 @@ export default function OrchestrationSection() {
         <h3 className="text-[#5B5D71] text-[14px] md:text-[15px] font-medium tracking-wide uppercase mb-6">
           HOW WE ORCHESTRATE ENTERPRISE DEALS
         </h3>
-        <h2 className="text-3xl md:text-[40px] lg:text-[42px] text-[#1A3FA8] font-medium leading-[1.3] max-w-4xl mx-auto px-4">
+        <h2 className="text-2xl md:text-[40px] lg:text-[42px] text-[#1A3FA8] font-medium leading-[1.3] max-w-4xl mx-auto px-4">
           A multi-channel GTM motion designed to move $100K+ ACV deals from first touch to closed revenue.
         </h2>
       </div>

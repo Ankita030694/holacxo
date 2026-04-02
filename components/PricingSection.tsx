@@ -39,22 +39,22 @@ export default function PricingSection() {
     }
   ];
   return (
-    <section className="w-full bg-[#F0EDE6] py-16 px-4 sm:px-6 md:px-12 flex flex-col items-center">
+    <section className="w-full bg-[#F0EDE6] py-12 sm:py-16 px-4 sm:px-6 md:px-12 flex flex-col items-center">
       
       {/* Centered Header */}
-      <div className="text-center mb-12 max-w-4xl mx-auto">
-        <p className="text-[#5B5D71] font-semibold tracking-widest text-[13px] uppercase mb-4">
+      <div className="text-center mb-8 sm:mb-12 max-w-4xl mx-auto">
+        <p className="text-[#5B5D71] font-semibold tracking-widest text-[12px] sm:text-[13px] uppercase mb-3 sm:mb-4">
           PRICING
         </p>
-        <h2 className="text-3xl md:text-5xl lg:text-[44px] font-semibold text-[#1A3FA8] leading-tight mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-[44px] font-semibold text-[#1A3FA8] leading-tight mb-4 sm:mb-6">
           Priced around your revenue goal. <br className="hidden md:block" /> Not our volume.
         </h2>
-        <p className="text-[#5B5D71] text-lg md:text-[19px] leading-relaxed max-w-3xl mx-auto">
-          We don't sell packages. We build a GTM motion around the annual number you want to hit — and price accordingly. Most clients start at $5K/month and see their first enterprise conversation within five days.
+        <p className="text-[#5B5D71] text-sm sm:text-lg md:text-[19px] leading-relaxed max-w-3xl mx-auto">
+          We don&apos;t sell packages. We build a GTM motion around the annual number you want to hit — and price accordingly. Most clients start at $5K/month and see their first enterprise conversation within five days.
         </p>
       </div>
 
-      <div className="relative w-full max-w-6xl rounded-lg overflow-hidden flex flex-col items-center py-8 px-6 md:px-10 shadow-2xl">
+      <div className="relative w-full max-w-6xl rounded-lg overflow-hidden flex flex-col items-center py-4 sm:py-8 px-4 sm:px-6 md:px-10 shadow-2xl">
         
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0 bg-[#0A0706]">
@@ -69,17 +69,17 @@ export default function PricingSection() {
         </div>
 
         {/* Foreground Content - Two Pricing Cards Grid */}
-        <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch pt-2">
+        <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 items-stretch pt-2">
           
           {plans.map((plan, idx) => (
             <div 
               key={idx} 
-              className={`flex flex-col p-8 md:p-10 border border-white/5 transition-all duration-300 relative overflow-hidden backdrop-blur-sm ${
+              className={`flex flex-col p-6 sm:p-8 md:p-10 border border-white/5 transition-all duration-300 relative overflow-hidden backdrop-blur-sm ${
                 plan.primary ? 'bg-white/[0.03]' : 'bg-transparent'
               }`}
             >
               {/* Top Tag */}
-              <div className="flex mb-6">
+              <div className="flex mb-4 sm:mb-6">
                 <span className={`px-4 py-1.5 text-[13px] font-bold uppercase tracking-wider rounded-sm ${
                   plan.primary ? 'bg-[#3A6DFF] text-white' : 'bg-[#F2F0EB] text-[#1A3FA8]'
                 }`}>
@@ -88,32 +88,32 @@ export default function PricingSection() {
               </div>
 
               {/* Title & Desc */}
-              <h3 className="text-white text-3xl font-medium mb-3">
+              <h3 className="text-white text-2xl sm:text-3xl font-medium mb-2 sm:mb-3">
                 {plan.title}
               </h3>
-              <p className="text-white/60 text-[15px] leading-relaxed mb-8 min-h-[40px]">
+              <p className="text-white/60 text-[14px] sm:text-[15px] leading-relaxed mb-5 sm:mb-8 min-h-[40px]">
                 {plan.desc}
               </p>
 
               {/* Pricing */}
-              <div className="mb-8">
-                <div className="text-white text-5xl md:text-[50px] font-semibold tracking-tight mb-2">
+              <div className="mb-5 sm:mb-8">
+                <div className="text-white text-3xl sm:text-5xl md:text-[50px] font-semibold tracking-tight mb-1 sm:mb-2">
                   {plan.price}
                 </div>
-                <div className="text-white/50 text-sm font-medium">
+                <div className="text-white/50 text-xs sm:text-sm font-medium">
                   {plan.subPrice}
                 </div>
               </div>
 
               {/* Divider */}
-              <div className="w-full h-px bg-white/10 mb-8"></div>
+              <div className="w-full h-px bg-white/10 mb-5 sm:mb-8"></div>
 
               {/* Features List */}
               <div className="flex-1">
-                <h4 className="text-white/40 text-[13px] font-bold tracking-widest uppercase mb-6">
+                <h4 className="text-white/40 text-[12px] sm:text-[13px] font-bold tracking-widest uppercase mb-4 sm:mb-6">
                   {plan.featuresHeader}
                 </h4>
-                <div className="flex flex-col gap-5 mb-10">
+                <div className="flex flex-col gap-3 sm:gap-5 mb-6 sm:mb-10">
                   {plan.features.map((feature, fIdx) => (
                     <div key={fIdx} className="flex gap-4 items-start">
                       <svg className="w-5 h-5 text-[#22C55E] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>

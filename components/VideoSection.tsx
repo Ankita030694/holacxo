@@ -1,7 +1,7 @@
 export default function VideoSection() {
   return (
     <section className="w-full bg-[#F0EDE6] pt-30 pb-20 px-6 flex flex-col items-center">
-      <h2 className="text-3xl md:text-[44px] text-[#1A3FA8] font-bold text-center max-w-5xl mb-14 leading-tight">
+      <h2 className="text-[24px] md:text-[44px] text-[#1A3FA8] font-bold text-center max-w-5xl mb-14 leading-tight">
         Built On Insider Understanding Of Enterprise Buying Behavior And Decision-Making.
       </h2>
       

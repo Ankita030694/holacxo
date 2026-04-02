@@ -66,11 +66,20 @@ export default function ContactPage() {
       <section className="relative min-h-screen flex flex-col overflow-hidden bg-[#0A163B]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
+          {/* Desktop Image */}
           <Image
             src="/hero/HERO IMAGE.png"
             alt="Contact Hero Background"
             fill
-            className="object-cover"
+            className="object-cover hidden sm:block"
+            priority
+          />
+          {/* Mobile Image */}
+          <Image
+            src="/hero_mobile.png"
+            alt="Contact Hero Background Mobile"
+            fill
+            className="object-cover block sm:hidden"
             priority
           />
           {/* Subtle dark overlay to match the reference image */}
@@ -81,27 +90,27 @@ export default function ContactPage() {
         <Navbar />
 
         {/* Hero Content Grid */}
-        <div className="relative z-10 flex-1 flex items-center justify-center w-full px-6 py-20">
-          <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="relative z-10 flex-1 flex items-center justify-center w-full px-4 sm:px-6 py-10 sm:py-20">
+          <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center">
             
             {/* Left Content */}
             <div className="flex flex-col text-white max-w-xl font-inter">
-              <p className="text-[#A2BAFF] font-semibold tracking-widest text-sm uppercase mb-8">
+              <p className="text-[#A2BAFF] font-semibold tracking-widest text-xs sm:text-sm uppercase mb-4 sm:mb-8">
                 GET IN TOUCH
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.15] mb-8">
-                Tell us your revenue goal. We'll design the GTM around it.
+              <h1 className="text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-[1.15] mb-4 sm:mb-8">
+                Tell us your revenue goal. We&apos;ll design the GTM around it.
               </h1>
-              <p className="text-blue-100/70 text-lg md:text-xl font-medium leading-relaxed">
-                A 30-minute call where we scope your pipeline motion around the number you're building toward.
+              <p className="text-blue-100/70 text-base sm:text-lg md:text-xl font-medium leading-relaxed">
+                A 30-minute call where we scope your pipeline motion around the number you&apos;re building toward.
               </p>
             </div>
 
             {/* Right Content - Form */}
-            <div className="w-full flex justify-end">
-              <div className="w-full max-w-lg bg-[#050B1B]/60 backdrop-blur-md p-10 rounded-lg border border-white/10 shadow-2xl font-inter">
-                <form onSubmit={handleSubmit} className="flex flex-col gap-6">
-                  <div className="grid grid-cols-2 gap-4">
+            <div className="w-full flex justify-center lg:justify-end">
+              <div className="w-full max-w-lg bg-[#050B1B]/60 backdrop-blur-md p-6 sm:p-10 rounded-lg border border-white/10 shadow-2xl font-inter">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4 sm:gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
                       <label className="text-white/80 text-sm font-medium">First name *</label>
                       <input 
@@ -165,7 +174,7 @@ export default function ContactPage() {
                   <button 
                     type="submit" 
                     disabled={status === "loading"}
-                    className="mt-4 bg-[#F2F0EB] text-[#0A163B] py-4 rounded font-bold text-base hover:bg-white transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="mt-2 sm:mt-4 bg-[#F2F0EB] text-[#0A163B] py-3.5 sm:py-4 rounded font-bold text-base hover:bg-white transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {status === "loading" ? "Submitting..." : "Submit"}
                   </button>

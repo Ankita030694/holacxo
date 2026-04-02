@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function WhatMakesPossible() {
   const features = [
     {
-      icon: "/whatMakes/Frame 43.svg", 
+      icon: "/whatMakes/1.svg", 
       title: "5-year deal behaviour dataset",
       description: "We recognise patterns — not guesses — to know when an account is actually in-market."
     },
@@ -13,20 +13,20 @@ export default function WhatMakesPossible() {
       description: "Only accounts showing confirmed buying triggers — not a spray of cold names."
     },
     {
-      icon: "/whatMakes/Frame 43 (2).svg",
+      icon: "/whatMakes/3.svg",
       title: "Internal buying mechanics",
       description: "We map the approval chain and sequence outreach to match how decisions actually move."
     },
     {
-      icon: "/whatMakes/Frame 43 (3).svg",
+      icon: "/whatMakes/4.svg",
       title: "Context before contact",
       description: "Budget cycle, tech stack, trigger events — every outreach reads as relevant, not generic."
     }
   ];
 
   return (
-    <section className="w-full bg-[#F0EDE6] py-24 px-6 flex flex-col items-center">
-      <h2 className="text-[#1A3FA8] text-[32px] md:text-[44px] font-bold tracking-tight mb-14 md:mb-20 text-center leading-[1.1] md:leading-normal">
+    <section className="w-full bg-[#F0EDE6] py-10 md:py-24 px-6 flex flex-col items-center">
+      <h2 className="text-[#1A3FA8] text-3xl md:text-[44px] font-bold tracking-tight mb-14 md:mb-20 text-center leading-[1.1] md:leading-normal">
         What makes this <br className="block md:hidden" /> possible
       </h2>
 

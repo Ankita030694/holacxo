@@ -9,7 +9,7 @@ export default function Navbar() {
 
   return (
     <div className="w-full relative z-50 px-4 pt-5 lg:px-0 lg:pt-0">
-      <div className={`w-full max-w-8xl mx-auto flex flex-col ${isOpen ? 'bg-[#0a1128]' : 'bg-[#0a1128] lg:bg-transparent'}`}>
+      <div className={`w-full max-w-8xl mx-auto flex flex-col relative ${isOpen ? 'bg-[#0a1128]' : 'bg-[#0a1128] lg:bg-transparent'}`}>
         <nav className="w-full px-5 py-4 lg:px-36 lg:py-8 flex items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" onClick={() => setIsOpen(false)}>
@@ -63,25 +63,27 @@ export default function Navbar() {
         </nav>
 
         {/* Mobile Dropdown Overlay (integrated into the floating box) */}
-        {isOpen && (
-          <div className="w-full flex flex-col pt-4 pb-8 px-6 lg:hidden border-t border-white/5 shadow-2xl">
-            <div className="flex flex-col items-center gap-6 text-[17px] text-blue-100/90 font-medium">
-              <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Solution</Link>
-              <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Resources</Link>
-              <Link href="#" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Pricing</Link>
-            </div>
-            
-            <div className="mt-8 px-2 w-full">
-              <Link 
-                href="/contact" 
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-center px-6 py-3.5 rounded bg-[#f5f5f0] text-[#0A163B] text-[16px] font-medium hover:bg-white transition-colors shadow-lg"
-              >
-                Get Started
-              </Link>
-            </div>
+        <div 
+          className={`absolute top-[100%] left-0 w-full bg-[#0a1128] flex flex-col overflow-hidden lg:hidden border-t border-white/5 shadow-2xl transition-all duration-300 ease-in-out ${
+            isOpen ? 'max-h-[400px] opacity-100 pt-4 pb-8 pointer-events-auto' : 'max-h-0 opacity-0 py-0 pointer-events-none border-transparent'
+          }`}
+        >
+          <div className="px-6 flex flex-col items-center gap-6 text-[17px] text-blue-100/90 font-medium">
+            <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Solution</Link>
+            <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Resources</Link>
+            <Link href="#" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Pricing</Link>
           </div>
-        )}
+          
+          <div className="mt-8 px-8 w-full flex justify-center">
+            <Link 
+              href="/contact" 
+              onClick={() => setIsOpen(false)}
+              className="block w-full text-center px-6 py-3.5 rounded bg-[#f5f5f0] text-[#0A163B] text-[16px] font-medium hover:bg-white transition-colors shadow-lg"
+            >
+              Get Started
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

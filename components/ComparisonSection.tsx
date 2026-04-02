@@ -35,8 +35,8 @@ export default function ComparisonSection() {
   ];
 
   return (
-    <section className="w-full bg-[#F0EDE6] py-16 px-4 sm:px-6 md:px-12 flex justify-center">
-      <div className="relative w-full max-w-6xl rounded-lg overflow-hidden flex flex-col items-center py-14 px-14 px-6 md:px-12 shadow-2xl">
+    <section className="w-full bg-[#F0EDE6] py-8 px-4 sm:px-2 md:px-12 flex justify-center">
+      <div className="relative w-full max-w-6xl overflow-hidden flex flex-col items-center py-8 px-6 md:px-12 shadow-2xl">
         
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0 bg-[#0A0706]">
@@ -63,7 +63,7 @@ export default function ComparisonSection() {
           </h2>
 
           {/* Comparison Table / Grid */}
-          <div className="w-full grid grid-cols-1 md:grid-cols-2 rounded-xl border border-white/10 overflow-hidden backdrop-blur-sm bg-black/20">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 border border-white/10 overflow-hidden backdrop-blur-sm bg-black/20">
             
             {/* Left Column (Others) */}
             <div className="flex flex-col bg-[#1A1616]/70 pb-6">

@@ -139,7 +139,7 @@ export default function TestimonialSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-4xl md:text-[44px] text-[#1A3FA8] font-bold max-w-4xl mx-auto mb-4"
+          className="text-3xl md:text-[44px] text-[#1A3FA8] font-bold max-w-4xl mx-auto mb-4"
         >
           Real Outcomes From Teams Closing Enterprise Deals Faster.
         </motion.h2>

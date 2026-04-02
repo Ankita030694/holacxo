@@ -9,6 +9,7 @@ import TimelineSection from "../components/TimelineSection";
 import ComparisonSection from "../components/ComparisonSection";
 import WhatMakesPossible from "../components/WhatMakesPossible";
 import OrchestrationSection from "../components/OrchestrationSection";
+import EnterpriseGtmDecoded from "../components/EnterpriseGtmDecoded";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -29,11 +30,20 @@ export default function Home() {
       <section className="relative h-screen flex flex-col overflow-hidden bg-[#0A163B]">
         {/* Hero Background Image */}
         <div className="absolute inset-0 z-0">
+          {/* Desktop Image */}
           <Image
             src="/hero/HERO IMAGE.png"
             alt="Hero Background"
             fill
-            className="object-cover"
+            className="object-cover hidden sm:block"
+            priority
+          />
+          {/* Mobile Image */}
+          <Image
+            src="/hero_mobile.png"
+            alt="Hero Background Mobile"
+            fill
+            className="object-cover block sm:hidden"
             priority
           />
         </div>
@@ -45,7 +55,7 @@ export default function Home() {
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center w-full">
           {/* Inner padded container for hero text */}
           <div className="px-6 flex flex-col items-center text-center">
-            <h1 className="text-[40px] sm:text-[44px] md:text-5xl lg:text-[64px] font-semibold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto px-2">
+            <h1 className="text-[32px] sm:text-[24px] md:text-[44px] lg:text-[64px] font-semibold text-white tracking-tight leading-[1.15] max-w-4xl mx-auto px-2">
               Generate $5M+ ARR <br className="block sm:hidden" /> in Enterprise Pipeline
             </h1>
             
@@ -66,9 +76,9 @@ export default function Home() {
           </p>
           
           <div className="w-full overflow-hidden mask-gradient relative flex">
-            <div className="flex whitespace-nowrap animate-marquee items-center min-w-full hover:[animation-play-state:paused]">
-              {/* Duplicate the array multi-times for a smoother long loop */}
-              {[...brandLogos, ...brandLogos, ...brandLogos].map((logo, index) => (
+            <div className="flex whitespace-nowrap animate-marquee items-center w-max hover:[animation-play-state:paused]">
+              {/* Duplicate exactly 2 times so that -50% translateX is perfectly seamless */}
+              {[...brandLogos, ...brandLogos].map((logo, index) => (
                 <div key={index} className="flex-none px-12 md:px-20 flex items-center h-20 relative">
                   <div className={`relative ${logo.includes('salesforce') ? 'h-16 w-56 md:h-20 md:w-64' : 'h-10 w-40 md:h-12 md:w-48'}`}>
                     <Image
@@ -111,6 +121,12 @@ export default function Home() {
 
       {/* Orchestration Chart Section */}
       <OrchestrationSection />
+
+      {/* Enterprise GTM Decoded Section */}
+      <EnterpriseGtmDecoded />
+
+      <CtaSection />
+
 
       {/* Main Footer */}
       <Footer />

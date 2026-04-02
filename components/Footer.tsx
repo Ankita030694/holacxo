@@ -17,11 +17,19 @@ export default function Footer() {
     <footer className="relative w-full overflow-hidden py-16 px-6 md:px-16 flex justify-center">
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0 bg-[#0A163B]">
+        {/* Desktop Image */}
         <Image
           src="/hero/HERO IMAGE.png"
           alt="Footer Background"
           fill
-          className="object-cover"
+          className="object-cover hidden sm:block"
+        />
+        {/* Mobile Image */}
+        <Image
+          src="/hero_mobile.png"
+          alt="Footer Background Mobile"
+          fill
+          className="object-cover block sm:hidden"
         />
         {/* Adds a slight dark overlay to ensure text legibility just in case */}
         <div className="absolute inset-0 bg-black/20"></div>
@@ -50,7 +58,7 @@ export default function Footer() {
           </div>
 
           {/* Links Columns */}
-          <div className="w-full lg:w-2/3 flex justify-start lg:justify-end gap-16 md:gap-42">
+          <div className="w-full lg:w-2/3 flex flex-col sm:flex-row justify-start lg:justify-end gap-16 md:gap-42">
             {footerLinks.map((column, idx) => (
               <div key={idx} className="flex flex-col">
                 <h4 className="text-white text-[20px] font-semibold mb-6">
@@ -73,7 +81,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-end w-full mt-8 md:mt-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full mt-8 md:mt-12">
           
           {/* Newsletter Subscribe */}
           <div className="w-full md:w-auto flex h-[50px] mb-8 md:mb-0">
