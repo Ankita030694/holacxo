@@ -24,10 +24,14 @@ export const metadata: Metadata = {
     telephone: false,
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: [
+      { url: "/favicon/favicon.ico" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon/favicon.ico",
+    apple: "/favicon/apple-touch-icon.png",
   },
+  manifest: "/favicon/site.webmanifest",
   openGraph: {
     title: "HolaCXO - B2B Pipeline Generation",
     description: "A GTM System Designed to Close Enterprise Deals in 90 Days",
