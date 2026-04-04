@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /authority/
+Disallow: /nullify/
+Disallow: /api/
+
+Sitemap: https://www.holacxo.com/sitemap.xml

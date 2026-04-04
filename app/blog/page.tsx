@@ -7,6 +7,16 @@ import Footer from "@/components/Footer";
 import FaqSection from "@/components/FaqSection";
 import CtaSection from "@/components/CtaSection";
 import Navbar from "@/components/Navbar";
+import { Metadata } from "next";
+import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "Insights & Strategy Blog | HolaCXO",
+  description: "Read our latest insights on B2B GTM strategy, enterprise pipeline generation, and closing multi-million dollar deals.",
+  alternates: {
+    canonical: "https://www.holacxo.com/blog",
+  },
+};
 
 // Explicitly set revalidation or dynamic behavior if needed
 export const dynamic = 'force-dynamic';
@@ -33,8 +43,32 @@ export default async function BlogPage() {
   const featuredBlog = allBlogs.length > 0 ? allBlogs[0] : undefined;
   const otherBlogs = allBlogs.length > 1 ? allBlogs.slice(1) : [];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.holacxo.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://www.holacxo.com/blog"
+      }
+    ]
+  };
+
   return (
     <main className="w-full flex flex-col bg-[#EBE7DF]">
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero Section */}
       <BlogHero />
 

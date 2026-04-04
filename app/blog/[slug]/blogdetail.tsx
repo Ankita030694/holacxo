@@ -110,8 +110,8 @@ const processContent = (html: string) => {
       const href = hrefMatch ? hrefMatch[1] : '';
       const isInternal =
         href.startsWith('/') ||
-        href.includes('://www.amalegalsolutions.com') ||
-        href.includes('://amalegalsolutions.com');
+        href.includes('://www.holacxo.com') ||
+        href.includes('://holacxo.com');
 
       if (isInternal) {
         // Remove nofollow from rel attribute for internal links
@@ -394,7 +394,7 @@ const ArticleDetail = memo(function ArticleDetail({ blog, faqs, reviews, related
                   <div>
                     <h4 className="font-bold text-gray-900">Team HolaCXO</h4>
                     <Link 
-                      href="/about"
+                      href="/"
                       className="text-xs text-[#0A163B] hover:underline"
                     >
                       View Profile

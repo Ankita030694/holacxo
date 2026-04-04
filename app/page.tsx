@@ -12,6 +12,16 @@ import OrchestrationSection from "../components/OrchestrationSection";
 import EnterpriseGtmDecoded from "../components/EnterpriseGtmDecoded";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { Metadata } from "next";
+import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "B2B Pipeline Generation & GTM Strategy | HolaCXO",
+  description: "Accelerate your enterprise sales with HolaCXO. We provide a proven GTM system designed to close enterprise deals in 90 days. Generate $5M+ ARR in pipeline.",
+  alternates: {
+    canonical: "https://www.holacxo.com",
+  },
+};
 
 export default function Home() {
   const brandLogos = [
@@ -24,8 +34,52 @@ export default function Home() {
     "salesforce 1.svg"
   ];
 
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "HolaCXO",
+    "url": "https://www.holacxo.com",
+    "logo": "https://www.holacxo.com/favicon.ico",
+    "description": "A GTM System Designed to Close Enterprise Deals in 90 Days",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+918700343611",
+      "contactType": "sales",
+      "availableLanguage": "English"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/holacxo",
+      "https://twitter.com/holacxo"
+    ]
+  };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "HolaCXO",
+    "url": "https://www.holacxo.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.holacxo.com/search?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <main className="w-full flex flex-col">
+      <Script
+        id="schema-org"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <Script
+        id="schema-website"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col overflow-hidden bg-[#0A163B]">
         {/* Hero Background Image */}
