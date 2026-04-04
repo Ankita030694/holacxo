@@ -13,7 +13,7 @@ export default function ComparisonSection() {
     },
     {
       other: "12–18 months. Pushing against locked doors.",
-      us: "3–9 months. We enter at the right internal moment."
+      us: "3–6 months. We enter at the right internal moment."
     },
     {
       other: "$1.8M / year. High volume, low conversion.",

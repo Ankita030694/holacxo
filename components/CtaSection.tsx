@@ -1,24 +1,32 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CtaSection() {
   return (
-    <section className="relative w-full py-10 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden bg-white">
-      {/* Coded Background Pattern */}
+    <section className="relative w-full py-10 sm:py-16 md:py-24 px-4 sm:px-6 flex flex-col items-center justify-center overflow-hidden bg-[#0A163B]">
+      {/* Background Image Container */}
       <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Soft gradient base */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#F8FAFC] to-white"></div>
-        
-        {/* Decorative Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-        
-        {/* Soft Glow Accents */}
-        <div className="absolute top-[-20%] right-[-10%] w-[50%] h-[80%] bg-[#1A3FA8] opacity-[0.04] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[-20%] left-[-10%] w-[50%] h-[80%] bg-[#1A3FA8] opacity-[0.04] rounded-full blur-3xl"></div>
+        {/* Desktop Image */}
+        <Image
+          src="/hero/HERO IMAGE.png"
+          alt="CTA Background"
+          fill
+          className="object-cover hidden sm:block"
+        />
+        {/* Mobile Image */}
+        <Image
+          src="/hero_mobile.png"
+          alt="CTA Background Mobile"
+          fill
+          className="object-cover block sm:hidden"
+        />
+        {/* Adds a slight dark overlay to ensure text legibility just in case */}
+        <div className="absolute inset-0 bg-black/20"></div>
       </div>
 
       {/* Foreground Content */}
       <div className="relative z-10 w-full max-w-4xl flex flex-col items-center text-center">
-        <h2 className="text-[22px] md:text-[32px] text-[#161662] font-medium mb-6 leading-snug">
+        <h2 className="text-[22px] md:text-[32px] text-white font-medium mb-6 leading-snug">
           Your Revenue Goal Shapes Everything. Let&apos;s Build the GTM Around it.
         </h2>
         

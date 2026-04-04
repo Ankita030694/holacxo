@@ -45,7 +45,7 @@ export default function FrameworkSection() {
   const displayIndex = activeIndex !== null ? activeIndex : 0;
 
   return (
-    <section className="w-full bg-[#F0EDE6] py-10 px-6 flex flex-col items-center">
+    <section id="solution" className="w-full bg-[#F0EDE6] py-10 px-6 flex flex-col items-center">
       {/* Headings */}
       <h3 className="text-[#5b5b72] text-[14px] md:text-[18px] font-semibold tracking-wider uppercase mb-4">
         Hola CXO's Framework That Closes

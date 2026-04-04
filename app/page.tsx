@@ -20,7 +20,7 @@ export default function Home() {
     "Group 29.svg",
     "Group 30.svg",
     "Vector.svg",
-    "ramco-logo.png_width=130&height=28&name=ramco-logo 1.svg",
+    "Ramco.svg",
     "salesforce 1.svg"
   ];
 

@@ -1,11 +1,11 @@
 export default function TrackRecordSection() {
   const stats = [
     {
-      value: "3–9 months",
+      value: "3–6 months",
       label: "Average Deal Cycle",
     },
     {
-      value: "$3M–$5M",
+      value: "$4M",
       label: "Average Pipeline Generated",
     },
     {

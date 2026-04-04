@@ -27,15 +27,15 @@ export default function ContactStats() {
             key={index} 
             className="bg-[#E0DDD6] p-6 sm:p-10 md:p-12 flex flex-col items-start min-h-[180px] sm:min-h-[280px] md:min-h-[320px] justify-between shadow-sm"
           >
-            <h4 className="text-[#1A2045] text-lg md:text-xl font-medium">
+            <h4 className="text-[#161662] text-lg md:text-xl font-medium">
               {stat.label}
             </h4>
             
             <div className="flex flex-col gap-2">
-              <span className="text-[#0B1038] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
+              <span className="text-[#161662] text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight">
                 {stat.value}
               </span>
-              <span className="text-[#5B5D71] text-lg font-medium">
+              <span className="text-[#161662]/80 text-lg font-medium">
                 {stat.sublabel}
               </span>
             </div>

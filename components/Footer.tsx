@@ -7,7 +7,7 @@ export default function Footer() {
       title: "Pages",
       links: [
         { name: "Home", href: "/" },
-        { name: "Solution", href: "/contact" },
+        { name: "Solution", href: "/#solution" },
         { name: "Resources", href: "/blog" },
         { name: "Pricing", href: "/contact" },
         { name: "Contact", href: "/contact" }

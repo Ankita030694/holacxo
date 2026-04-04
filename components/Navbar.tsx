@@ -27,7 +27,7 @@ export default function Navbar() {
             <div className="h-6 w-px bg-white/30 hidden lg:block"></div>
             
             <div className="hidden lg:flex items-center gap-8 text-[18px] font-medium text-blue-100/80">
-              <Link href="/contact" className="hover:text-white transition-colors">Solution</Link>
+              <Link href="/#solution" className="hover:text-white transition-colors">Solution</Link>
               <Link href="/blog" className="hover:text-white transition-colors">Resources</Link>
               <Link href="/contact" className="hover:text-white transition-colors">Pricing</Link>
             </div>
@@ -69,7 +69,7 @@ export default function Navbar() {
           }`}
         >
           <div className="px-6 flex flex-col items-center gap-6 text-[17px] text-blue-100/90 font-medium">
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Solution</Link>
+            <Link href="/#solution" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Solution</Link>
             <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Resources</Link>
             <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Pricing</Link>
           </div>
