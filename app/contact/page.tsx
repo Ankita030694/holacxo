@@ -35,22 +35,25 @@ export default function ContactPage() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({ ...formData, pageUrl: window.location.href })
       });
 
-      const data = await res.json();
-
       if (res.ok) {
-        setStatus("success");
-        setMessage("Thank you! Our team will contact you soon.");
-        setFormData({
-          firstName: "",
-          lastName: "",
-          email: "",
-          phoneNumber: "",
-          companyName: ""
-        });
+        if (res.redirected) {
+          window.location.href = res.url;
+        } else {
+          setStatus("success");
+          setMessage("Thank you! Our team will contact you soon.");
+          setFormData({
+            firstName: "",
+            lastName: "",
+            email: "",
+            phoneNumber: "",
+            companyName: ""
+          });
+        }
       } else {
+        const data = await res.json();
         setStatus("error");
         setMessage(data.error || "Something went wrong.");
       }
