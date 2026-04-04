@@ -40,9 +40,18 @@ const frameworkData = [
 
 export default function FrameworkSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
+  const [mousePos, setMousePos] = useState({ x: 50, y: 50 });
+  const [isHovered, setIsHovered] = useState(false);
   
   // For desktop display when no option is clicked, default to the first item visually
   const displayIndex = activeIndex !== null ? activeIndex : 0;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+    setMousePos({ x, y });
+  };
 
   return (
     <section id="solution" className="w-full bg-[#F0EDE6] py-10 px-6 flex flex-col items-center">
@@ -130,20 +139,33 @@ export default function FrameworkSection() {
         </div>
 
         {/* Right Column - Dynamic Content (Desktop Only) */}
-        <div className="hidden lg:flex lg:col-span-7 bg-[#161662] w-full h-full p-6 flex-col items-start justify-start shadow-xl">
+        <div className="hidden lg:flex lg:col-span-7 bg-[#161662] w-full h-full p-6 flex-col items-start justify-start shadow-xl overflow-hidden">
           <p className="text-white text-lg font-medium text-left leading-relaxed mb-6 max-w-2xl flex-shrink-0">
             {frameworkData[displayIndex].description}
           </p>
 
-          <div className="w-full shadow-2xl overflow-hidden rounded-sm mt-auto">
-            <Image 
-              src={frameworkData[displayIndex].imagePath} 
-              alt={frameworkData[displayIndex].title} 
-              width={1200}
-              height={800}
-              sizes="100vw"
-              className="w-full h-auto block object-cover" 
-            />
+          <div 
+            className="w-full shadow-2xl overflow-hidden rounded-sm mt-auto cursor-zoom-in group"
+            onMouseMove={handleMouseMove}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
+            <div 
+              className="w-full h-full transition-transform duration-500 ease-out"
+              style={{
+                transformOrigin: `${mousePos.x}% ${mousePos.y}%`,
+                transform: isHovered ? 'scale(1.8)' : 'scale(1)'
+              }}
+            >
+              <Image 
+                src={frameworkData[displayIndex].imagePath} 
+                alt={frameworkData[displayIndex].title} 
+                width={1200}
+                height={800}
+                sizes="100vw"
+                className="w-full h-auto block object-cover" 
+              />
+            </div>
           </div>
         </div>
       </div>
