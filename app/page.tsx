@@ -9,11 +9,13 @@ import TimelineSection from "../components/TimelineSection";
 import ComparisonSection from "../components/ComparisonSection";
 import WhatMakesPossible from "../components/WhatMakesPossible";
 import OrchestrationSection from "../components/OrchestrationSection";
-import EnterpriseGtmDecoded from "../components/EnterpriseGtmDecoded";
+import EnterpriseGtmDecoded, { Blog } from "../components/EnterpriseGtmDecoded";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { Metadata } from "next";
 import Script from "next/script";
+import { collection, getDocs, orderBy, query, limit } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 export const metadata: Metadata = {
   title: "B2B Pipeline Generation & GTM Strategy | HolaCXO",
@@ -23,7 +25,24 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+async function getBlogs(): Promise<Blog[]> {
+  try {
+    const blogsCollection = collection(db, "blogs");
+    const q = query(blogsCollection, orderBy("created", "desc"), limit(3));
+    const querySnapshot = await getDocs(q);
+    
+    return querySnapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    } as Blog));
+  } catch (error) {
+    console.error("Error fetching blogs for home page:", error);
+    return [];
+  }
+}
+
+export default async function Home() {
+  const blogs = await getBlogs();
   const brandLogos = [
     "Clip path group.svg",
     "Company Logo 1.svg",
@@ -177,7 +196,7 @@ export default function Home() {
       <OrchestrationSection />
 
       {/* Enterprise GTM Decoded Section */}
-      <EnterpriseGtmDecoded />
+      <EnterpriseGtmDecoded articles={blogs} />
 
       <CtaSection />
 
