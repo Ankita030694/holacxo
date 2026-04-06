@@ -116,7 +116,7 @@ export default function ContactFeatures() {
         <div className="w-full flex justify-center mt-10 md:hidden">
           <button 
             onClick={() => setShowAllFeatures(true)}
-            className="px-10 py-3 bg-blue-500 text-white text-[15px] font-medium hover:bg-blue-600 transition-colors shadow-sm"
+            className="px-10 py-3 bg-blue-500 text-white text-[15px] font-medium hover:bg-blue-600 transition-colors shadow-sm active:bg-[#161662] active:scale-95"
           >
             View More
           </button>

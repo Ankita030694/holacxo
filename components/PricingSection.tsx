@@ -131,8 +131,8 @@ export default function PricingSection() {
               <button 
                 className={`w-full py-4 font-bold text-base transition-all duration-300 rounded-sm ${
                   plan.primary 
-                  ? 'bg-[#3A6DFF] text-white hover:bg-[#2A5DFF] shadow-[0_12px_24px_rgba(58,109,255,0.3)]' 
-                  : 'bg-[#F2F0EB] text-[#1A3FA8] hover:bg-white'
+                  ? 'bg-[#3A6DFF] text-white hover:bg-[#2A5DFF] shadow-[0_12px_24px_rgba(58,109,255,0.3)] active:bg-[#6B9FFF] active:shadow-none active:scale-95' 
+                  : 'bg-[#F2F0EB] text-[#1A3FA8] hover:bg-white active:bg-[#1A3FA8] active:text-white active:scale-95'
                 }`}
               >
                 {plan.buttonLabel}

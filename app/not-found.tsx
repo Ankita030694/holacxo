@@ -24,13 +24,13 @@ export default function NotFound() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               href="/"
-              className="px-8 py-4 bg-[#F2F0EB] text-[#0A163B] font-bold rounded hover:bg-white transition-all shadow-lg"
+              className="px-8 py-4 bg-[#F2F0EB] text-[#0A163B] font-bold rounded hover:bg-white transition-all shadow-lg active:bg-[#1A3FA8] active:text-white active:scale-95"
             >
               Return Home
             </Link>
             <Link 
               href="/blog"
-              className="px-8 py-4 bg-white/5 text-white font-semibold rounded border border-white/10 hover:bg-white/10 transition-all"
+              className="px-8 py-4 bg-white/5 text-white font-semibold rounded border border-white/10 hover:bg-white/10 transition-all active:bg-[#3A6DFF] active:text-white active:border-[#3A6DFF] active:scale-95"
             >
               Explore our Blog
             </Link>

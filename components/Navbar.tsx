@@ -69,16 +69,16 @@ export default function Navbar() {
           }`}
         >
           <div className="px-6 flex flex-col items-center gap-6 text-[17px] text-blue-100/90 font-medium">
-            <Link href="/#solution" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Solution</Link>
-            <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Resources</Link>
-            <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors">Pricing</Link>
+            <Link href="/#solution" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors px-6 py-2 rounded-md active:bg-[#3A6DFF] active:text-white active:font-bold">Solution</Link>
+            <Link href="/blog" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors px-6 py-2 rounded-md active:bg-[#3A6DFF] active:text-white active:font-bold">Resources</Link>
+            <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-white transition-colors px-6 py-2 rounded-md active:bg-[#3A6DFF] active:text-white active:font-bold">Pricing</Link>
           </div>
           
           <div className="mt-8 px-8 w-full flex justify-center">
             <Link 
               href="/contact" 
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center px-6 py-3.5 rounded bg-[#f5f5f0] text-[#0A163B] text-[16px] font-medium hover:bg-white transition-colors shadow-lg"
+              className="block w-full text-center px-6 py-3.5 rounded bg-[#f5f5f0] text-[#0A163B] text-[16px] font-medium hover:bg-white transition-colors shadow-lg active:bg-[#1A3FA8] active:text-white active:scale-95"
             >
               Get Started
             </Link>

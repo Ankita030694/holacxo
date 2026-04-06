@@ -136,7 +136,7 @@ export default async function Home() {
               A GTM System Designed to Close Enterprise Deals in 90 Days
             </p>
 
-            <Link href="/contact" className="mt-10 md:mt-10 px-8 py-3 md:px-8 md:py-3.5 w-full sm:w-auto max-w-[220px] bg-[#f5f5f0] text-[#0A163B] rounded font-semibold text-[19px] hover:bg-white transition-colors shadow-lg shadow-white/5 flex items-center justify-center">
+            <Link href="/contact" className="mt-10 md:mt-10 px-8 py-3 md:px-8 md:py-3.5 w-full sm:w-auto max-w-[220px] bg-[#f5f5f0] text-[#0A163B] rounded font-semibold text-[19px] hover:bg-white transition-colors shadow-lg shadow-white/5 flex items-center justify-center active:bg-[#1A3FA8] active:text-white active:scale-95">
               Get a demo
             </Link>
           </div>

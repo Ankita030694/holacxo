@@ -35,7 +35,7 @@ export default function EnterpriseGtmDecoded({ articles = [] }: EnterpriseGtmDec
       {/* Cards Grid */}
       <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8" style={{scale: 0.9}}>
         {articles.map((article, idx) => (
-          <Link href={`/blog/${article.slug}`} key={article.id} className="flex flex-col group cursor-pointer">
+          <Link href={`/blog/${article.slug}`} key={article.id} className="flex flex-col group cursor-pointer transition-transform active:scale-[0.96] active:ring-4 active:ring-[#3A6DFF]">
             {/* Top Image Container */}
             <div className="w-full aspect-[4/3] bg-[#F1F4F8] flex items-center justify-center relative overflow-hidden">
               {article.image ? (
@@ -62,7 +62,7 @@ export default function EnterpriseGtmDecoded({ articles = [] }: EnterpriseGtmDec
             </div>
 
             {/* Bottom Content Container */}
-            <div className="w-full bg-[#E5E3DD] p-6 md:p-8 flex flex-col flex-grow">
+            <div className="w-full bg-[#E5E3DD] p-6 md:p-8 flex flex-col flex-grow group-active:bg-[#161662] transition-colors">
               <span className="text-[#3A6DFF] text-[13px] md:text-sm font-medium tracking-wide uppercase mb-3">
                 STORIES
               </span>
@@ -75,7 +75,7 @@ export default function EnterpriseGtmDecoded({ articles = [] }: EnterpriseGtmDec
                 {article.subtitle || stripHtml(article.description).substring(0, 150) + '...'}
               </p>
               
-              <span className="text-[#1A2045] font-semibold text-[15px] flex items-center group-hover:text-[#3A6DFF] transition-colors">
+              <span className="text-[#1A2045] font-semibold text-[15px] flex items-center group-hover:text-[#3A6DFF] group-active:text-white transition-colors">
                 Read More →
               </span>
             </div>

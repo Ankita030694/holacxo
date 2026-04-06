@@ -27,6 +27,11 @@ body {
   font-family: var(--font-sans), sans-serif;
 }
 
+/* Remove default mobile tap highlight so custom active states are visible */
+a, button, [role="button"] {
+  -webkit-tap-highlight-color: transparent;
+}
+
 @keyframes marquee {
   0% {
     transform: translateX(0);

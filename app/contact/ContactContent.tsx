@@ -169,7 +169,7 @@ export default function ContactContent() {
                   <button 
                     type="submit" 
                     disabled={status === "loading"}
-                    className="mt-2 sm:mt-4 bg-[#F2F0EB] text-[#0A163B] py-3.5 sm:py-4 rounded font-bold text-base hover:bg-white transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="mt-2 sm:mt-4 bg-[#F2F0EB] text-[#0A163B] py-3.5 sm:py-4 rounded font-bold text-base hover:bg-white transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed active:bg-[#1A3FA8] active:text-white active:scale-95"
                   >
                     {status === "loading" ? "Submitting..." : "Submit"}
                   </button>

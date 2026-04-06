@@ -70,13 +70,13 @@ export default function ThankYouContent() {
           >
             <Link 
               href="/"
-              className="px-8 py-4 bg-[#F2F0EB] text-[#0A163B] font-bold rounded hover:bg-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0"
+              className="px-8 py-4 bg-[#F2F0EB] text-[#0A163B] font-bold rounded hover:bg-white transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 active:bg-[#1A3FA8] active:text-white active:scale-95"
             >
               Return Home
             </Link>
             <Link 
               href="/blog"
-              className="px-8 py-4 bg-white/5 text-white font-semibold rounded border border-white/10 hover:bg-white/10 transition-all"
+              className="px-8 py-4 bg-white/5 text-white font-semibold rounded border border-white/10 hover:bg-white/10 transition-all active:bg-[#3A6DFF] active:text-white active:border-[#3A6DFF] active:scale-95"
             >
               Explore our Blog
             </Link>

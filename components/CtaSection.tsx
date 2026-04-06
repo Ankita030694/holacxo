@@ -30,7 +30,7 @@ export default function CtaSection() {
           Your Revenue Goal Shapes Everything. Let&apos;s Build the GTM Around it.
         </h2>
         
-        <Link href="/contact" className="bg-[#1A3FA8] hover:bg-[#122A80] text-white font-medium text-[16px] px-8 py-3.5 transition-colors shadow-sm relative overflow-hidden group">
+        <Link href="/contact" className="bg-[#1A3FA8] hover:bg-[#122A80] text-white font-medium text-[16px] px-8 py-3.5 transition-colors shadow-sm relative overflow-hidden group active:bg-[#6B9FFF] active:scale-95">
           <span className="relative z-10">See it in action</span>
         </Link>
       </div>
