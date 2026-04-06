@@ -90,20 +90,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end w-full mt-8 md:mt-12">
-          
-          {/* Newsletter Subscribe */}
-          <div className="w-full md:w-auto flex h-[50px] mb-8 md:mb-0">
-            <input 
-              type="email" 
-              placeholder="Subscribe to our newsletter" 
-              className="bg-[#F2F0EB] text-[#161662] px-6 h-full w-full md:w-[320px] outline-none text-[15px] placeholder:text-[#161662]/70"
-            />
-            <button className="bg-[#111155] hover:bg-[#1A1A6D] text-white px-8 h-full font-medium transition-colors text-[15px]">
-              Subscribe
-            </button>
-          </div>
-
+        <div className="flex flex-col md:flex-row justify-end items-start md:items-end w-full mt-8 md:mt-12">
           {/* Social Icons */}
           <div className="flex gap-4">
             {/* LinkedIn icon */}
