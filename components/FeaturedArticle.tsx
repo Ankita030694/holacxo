@@ -95,7 +95,7 @@ export default function FeaturedArticle({ blog }: FeaturedArticleProps) {
           <div className="mt-16 pt-6 border-t border-[#4A4A4A] flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 text-[13px] text-[#9CA3AF]">
             <div className="flex items-center gap-[6px]">
               <span>By</span>
-              <span className="text-white font-normal">{blog.author || "Team HolaCXO"}</span>
+              <span className="text-white font-normal">Team HolaCXO</span>
             </div>
             
             <div className="flex items-center gap-[6px]">
